@@ -1,41 +1,416 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-AT">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Kontor – Support</title>
-<meta name="description" content="AI Kontor: Rechnungen, Ausgaben, Bank und UVA für kleine Betriebe in Österreich – auf dem eigenen Mac.">
-<link rel="icon" href="icon.png">
+<title>AI Kontor – Buchhaltung, Lohn und Rechnungen für kleine Betriebe in Österreich</title>
+<meta name="description" content="Buchhaltung, Lohnverrechnung, Rechnungen nach UStG, Belege mit KI, Bank und UVA – in einer App auf Ihrem Computer, für Mac und Windows. Ihre Daten bleiben bei Ihnen.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="bilder/icon-64.png">
+<link rel="apple-touch-icon" href="bilder/icon-256.png">
+<link rel="alternate" hreflang="de" href="index.html">
+<link rel="alternate" hreflang="en" href="en/index.html">
 <link rel="stylesheet" href="stil.css">
 </head>
 <body>
+
+<header class="kopf">
+  <div class="rahmen">
+    <a class="marke" href="index.html"><img src="bilder/icon-64.png" alt="" width="32" height="32">AI Kontor</a>
+    <nav class="navi" aria-label="Seite">
+      <a href="#uebersicht">Funktionen</a>
+      <a href="#daten">Ihre Daten</a>
+      <a href="#preis">Preis</a>
+      <a href="#fragen">Fragen</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <nav class="sprachen" aria-label="Sprache">
+      <a href="index.html" aria-current="page" lang="de">DE</a>
+      <a href="en/index.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<header><img src="icon.png" alt=""><a href="index.html">AI Kontor</a>
-<nav><a href="index.html" aria-current="page">Support</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></header>
+  <section class="hero rahmen">
+    <img class="hero-icon" src="bilder/icon-256.png" alt="" width="96" height="96">
+    <p class="label">Für kleine Betriebe in Österreich</p>
+    <h1>Ihr Büro. Auf Ihrem Computer.</h1>
+    <p class="plattform">Für Mac und Windows</p>
+    <p class="einleitung">Buchhaltung, Lohn, Rechnungen, Belege, Bank und Steuer – in einer App. Ihre Daten bleiben bei Ihnen.</p>
+    <div class="knopf-zeile">
+      <span class="knopf">Demnächst im Mac App Store</span>
+      <a class="zweitlink" href="mailto:isar.pishan@gmail.com?subject=AI%20Kontor%20f%C3%BCr%20Windows">Für Windows per E-Mail anfragen</a>
+    </div>
+    <p class="klein">€ 99,99 pro Monat · gleicher Preis für Mac und Windows</p>
+  </section>
 
-<h1>Support</h1>
-<p>AI Kontor ist das Büro für kleine Betriebe in Österreich: Rechnungen nach UStG, Mahnungen, Ausgaben mit Belegen, Bankabgleich, UVA und Berichte – auf Ihrem eigenen Mac, ohne Cloud-Konto.</p>
+  <section class="uebersicht rahmen" id="uebersicht" aria-labelledby="ueberblick-titel">
+    <p class="label" id="ueberblick-titel">Was AI Kontor für Sie erledigt</p>
+    <ul class="kacheln">
+      <li><a class="kachel" href="#buchhaltung"><span class="kachel-titel"><span class="titel-wort">Buchhaltung</span></span><span class="kachel-text">Einnahmen-Ausgaben-Rechnung oder doppelt – bis zum Jahresabschluss.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#lohn"><span class="kachel-titel"><span class="titel-wort">Lohnverrechnung</span></span><span class="kachel-text">Abrechnung, Kollektivvertrag und Abgaben an ÖGK, Finanzamt und Gemeinde.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#rechnungen"><span class="kachel-titel"><span class="titel-wort">Rechnungen</span></span><span class="kachel-text">Vom Angebot bis zum Storno, nach § 11 UStG, als PDF mit QR-Code.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#zahlungen"><span class="kachel-titel"><span class="titel-wort">Zahlungen <span class="und">&amp;</span><br>Mahnungen</span></span><span class="kachel-text">Offene Rechnungen im Blick, Mahnungen in drei Stufen.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#belege"><span class="kachel-titel"><span class="titel-wort">Belege <span class="und">&amp;</span><br>Ausgaben</span></span><span class="kachel-text">Fotografieren – die KI liest, Sie bestätigen.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#bank"><span class="kachel-titel"><span class="titel-wort">Bank</span></span><span class="kachel-text">Kontoauszüge jeder Bank, automatisch abgeglichen.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#steuer"><span class="kachel-titel"><span class="titel-wort">Steuer <span class="und">&amp;</span><br>Formulare</span></span><span class="kachel-text">UVA für FinanzOnline, U1, E1, K1 und alle Fristen.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#berichte"><span class="kachel-titel"><span class="titel-wort">Berichte <span class="und">&amp;</span> Fragen</span></span><span class="kachel-text">Ihre Zahlen auf einen Blick – und Antworten darauf.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#privat"><span class="kachel-titel"><span class="titel-wort">Privat</span></span><span class="kachel-text">Budget und Sparziele, getrennt vom Betrieb.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#team"><span class="kachel-titel"><span class="titel-wort">Steuerberatung <span class="und">&amp;</span><br>Team</span></span><span class="kachel-text">Rollen, Rechte und Export für die Kanzlei.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#daten"><span class="kachel-titel"><span class="titel-wort">Ihre Daten</span></span><span class="kachel-text">Auf Ihrem Computer, täglich verschlüsselt gesichert.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+      <li><a class="kachel" href="#plattform"><span class="kachel-titel"><span class="titel-wort">Mac <span class="und">&amp;</span> Windows</span></span><span class="kachel-text">Eine App, ein Preis, für beide Systeme.</span><span class="kachel-pfeil" aria-hidden="true">↓</span></a></li>
+    </ul>
+  </section>
 
-<h2>Kontakt</h2>
-<p class="kontakt"><a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a></p>
-<p>Wir antworten in der Regel innerhalb von zwei Werktagen, auf Deutsch, Englisch oder Persisch. Bitte schicken Sie keine Rechnungen, Belege oder Kundendaten mit – eine kurze Beschreibung und, wenn möglich, ein Bildschirmfoto ohne vertrauliche Angaben genügen.</p>
 
-<h2>Häufige Fragen</h2>
-<h3>Wo liegen meine Daten?</h3>
-<p>Ausschließlich auf Ihrem Mac. Wir haben keinen Zugriff darauf. Wählen Sie deshalb im Menü <strong>AI Kontor → Desktop-Einstellungen → Sicherungsordner wählen</strong> einen Ordner (z. B. auf einem externen Laufwerk); AI Kontor sichert dann täglich verschlüsselt.</p>
-<h3>Was ist der Notfallschlüssel?</h3>
-<p>Ohne ihn lässt sich eine Sicherung auf einem anderen Mac nicht wiederherstellen. Speichern oder drucken Sie ihn einmal und bewahren Sie ihn getrennt von der Sicherung auf.</p>
-<h3>Passwort oder Authenticator verloren?</h3>
-<p>Der Inhaber kann den Zugang einer Person unter <strong>AI Kontor → Desktop-Einstellungen → Zugang zurücksetzen</strong> erneuern – nur direkt am Mac, auf dem AI Kontor läuft.</p>
-<h3>Brauche ich einen KI-Anbieter?</h3>
-<p>Nein. Mit einem eigenen Schlüssel liest AI Kontor Belege und Kontoauszüge automatisch; ohne Schlüssel erfassen Sie die Angaben selbst. Alles andere funktioniert genauso.</p>
-<h3>Ersetzt AI Kontor die Steuerberatung?</h3>
-<p>Nein. AI Kontor bereitet Rechnungen, UVA-Kennzahlen und Auswertungen vor und exportiert sie für Ihre Steuerberatung. Prüfen Sie Meldungen an das Finanzamt bitte vor dem Absenden.</p>
+  <section class="abschnitt" aria-labelledby="funktionen-titel">
+    <div class="rahmen">
+      <p class="label">01 / Funktionen</p>
+      <h2 id="funktionen-titel">Vom Beleg bis zum Jahresabschluss.</h2>
 
-<h2 lang="en">Support in English</h2>
-<p lang="en">AI Kontor is a back-office app for small businesses in Austria – invoices, expenses, bank matching and VAT returns, stored only on your own Mac. Write to <a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a>; we usually answer within two business days. Please do not send invoices, receipts or customer data.</p>
+      <div class="funktionen">
+        <article class="funktion" id="buchhaltung">
+          <div class="funktion-text">
+            <span class="nr">01</span>
+            <h3>Buchhaltung</h3>
+            <ul class="punkte">
+              <li>Einnahmen-Ausgaben-Rechnung für Einzelunternehmen, auch als Kleinunternehmer</li>
+              <li>Doppelte Buchhaltung für die GmbH, mit Kontenplan, Buchungsjournal, Hauptbuch, Bilanz und GuV</li>
+              <li>Rechnungen, Zahlungen, Ausgaben und Löhne buchen sich selbst; Korrekturen laufen über Storno, nichts wird überschrieben</li>
+              <li>Eingangsrechnungen, Anlagenverzeichnis mit AfA, Monats- und Jahresabschluss</li>
+              <li>Jahresabschluss der kleinen GmbH als Paket für das Firmenbuch vorbereiten</li>
+              <li>Umstieg aus einem anderen Programm: Anfangsbestände und offene Rechnungen übernehmen und abgleichen</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/07-buchhaltung-de-dunkel.jpg">
+              <img src="bilder/07-buchhaltung-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Das Buchungsjournal in AI Kontor mit Eröffnung und gebuchten Lohnabrechnungen">
+            </picture>
+            <figcaption>Das Buchungsjournal füllt sich von selbst – aus Rechnungen, Zahlungen, Ausgaben und Löhnen.</figcaption>
+          </figure>
+        </article>
 
-<footer>© 2026 Isar Pishan · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></footer>
+        <article class="funktion" id="lohn">
+          <div class="funktion-text">
+            <span class="nr">02</span>
+            <h3>Lohnverrechnung</h3>
+            <ul class="punkte">
+              <li>Lohn- und Gehaltsabrechnung für Angestellte und Arbeiter, als PDF für jede Person</li>
+              <li>Kollektivvertrag hinterlegen – aus der Vorlage, von Hand oder von der KI ausgelesen; Sie bestätigen</li>
+              <li>Zeiten, Urlaub und Krankenstand</li>
+              <li>Abgabenübersicht für ÖGK, Finanzamt und Gemeinde, mit Empfänger, IBAN, Zahlungsreferenz und Fälligkeit</li>
+              <li>ELDA-Dateien für mBGM, Lohnzettel (L16) sowie An- und Abmeldung vorbereiten</li>
+              <li>Jede Abrechnung wird direkt gebucht; Lohnkonto als Excel</li>
+            </ul>
+            <p class="hinweis">Für gewöhnliche Dienstverhältnisse. Seltene Sonderfälle berechnet die App nicht – sie sagt es Ihnen klar.</p>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/09-lohn-de-dunkel.jpg">
+              <img src="bilder/09-lohn-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Abgabenübersicht in AI Kontor: Beträge für ÖGK, Finanzamt und Kommunalsteuer mit Empfänger, IBAN und Zahlungsreferenz">
+            </picture>
+            <figcaption>Was an ÖGK, Finanzamt und Gemeinde geht – mit IBAN, Zahlungsreferenz und Frist.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="rechnungen">
+          <div class="funktion-text">
+            <span class="nr">03</span>
+            <h3>Rechnungen</h3>
+            <ul class="punkte">
+              <li>Angebote, Lieferscheine, Rechnungen, Gutschriften und Storno</li>
+              <li>Rechnungen nach § 11 UStG, mit allen Steuersätzen und Kleinunternehmerregelung</li>
+              <li>Fortlaufende Nummern, unveränderbare Dokumente</li>
+              <li>PDF mit Ihrem Logo und Zahlungs-QR-Code, Versand per E-Mail</li>
+              <li>Kunden und Artikel an einem Ort</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/02-rechnung-de-dunkel.jpg">
+              <img src="bilder/02-rechnung-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Eine Rechnung in AI Kontor mit Vorschau des PDF">
+            </picture>
+            <figcaption>Jede Rechnung als PDF mit Ihrem Logo – unveränderbar, sobald sie ausgestellt ist.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="zahlungen">
+          <div class="funktion-text">
+            <span class="nr">04</span>
+            <h3>Zahlungen <span class="und">&amp;</span> Mahnungen</h3>
+            <ul class="punkte">
+              <li>Offene und überfällige Rechnungen auf einen Blick</li>
+              <li>Mahnungen in drei Stufen, als PDF und per E-Mail</li>
+              <li>Zahlungen, Teilzahlungen und Rückzahlungen erfassen</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/03-offen-de-dunkel.jpg">
+              <img src="bilder/03-offen-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Offene Rechnungen in AI Kontor mit Summe, Fälligkeit und Knopf zum Buchen der Zahlung">
+            </picture>
+            <figcaption>Offen, überfällig, gemahnt – und die Zahlung mit einem Klick gebucht.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="belege">
+          <div class="funktion-text">
+            <span class="nr">05</span>
+            <h3>Belege <span class="und">&amp;</span> Ausgaben</h3>
+            <ul class="punkte">
+              <li>Belege mit dem Handy fotografieren, hochladen oder aus dem E-Mail-Postfach holen</li>
+              <li>Die KI liest Betrag, Datum, Lieferant und Vorsteuer – Sie prüfen und bestätigen</li>
+              <li>Ausgaben mit Vorsteuer, auch Reverse Charge</li>
+              <li>Fixkosten, die sich selbst eintragen</li>
+              <li>Schnell erfassen per Text oder Sprache</li>
+            </ul>
+            <p class="hinweis">Die Handy-Seite ist nur in Ihrem eigenen WLAN erreichbar. KI ist freiwillig – ohne sie erfassen Sie die Angaben selbst.</p>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild paar">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/04-ausgaben-de-dunkel.jpg">
+              <img src="bilder/04-ausgaben-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Ausgaben in AI Kontor mit Lieferant, Kategorie und Vorsteuer">
+            </picture>
+            <picture class="handy">
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/15-beleg-handy-de-dunkel.jpg">
+              <img src="bilder/15-beleg-handy-de-hell.jpg" width="600" height="1300" loading="lazy"
+                   alt="Die Handy-Seite von AI Kontor mit dem Knopf »Beleg fotografieren«">
+            </picture>
+            <figcaption>Am Computer prüfen, was Sie am Handy fotografiert haben.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="bank">
+          <div class="funktion-text">
+            <span class="nr">06</span>
+            <h3>Bank</h3>
+            <ul class="punkte">
+              <li>Kontoauszüge jeder Bank als CSV, camt.053 oder MT940 – als PDF mit KI</li>
+              <li>Spalten einmal zuordnen, danach erkennt AI Kontor Ihre Bank wieder</li>
+              <li>Automatischer Abgleich mit Rechnungen, Ausgaben, Fixkosten, Löhnen und Privat</li>
+              <li>Sichere Vorschläge mit einem Klick übernehmen; was fehlt, steht unter »Beleg fehlt«</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/10-bank-de-dunkel.jpg">
+              <img src="bilder/10-bank-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Bankabgleich in AI Kontor: Umsätze mit Vorschlägen zu Rechnungen und Ausgaben">
+            </picture>
+            <figcaption>Jeder Umsatz mit Vorschlag – Rechnungsnummer und Betrag werden erkannt.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="steuer">
+          <div class="funktion-text">
+            <span class="nr">07</span>
+            <h3>Steuer <span class="und">&amp;</span> Formulare</h3>
+            <ul class="punkte">
+              <li>Umsatzsteuervoranmeldung mit Kennzahlen für FinanzOnline, auch als Datei (U30)</li>
+              <li>Jahreserklärungen U1, E1 und K1 vorbereiten</li>
+              <li>Welche Formulare für Ihren Betrieb gelten – nach Jahr, mit Grund und Frist</li>
+              <li>Alle Termine auf einen Blick</li>
+            </ul>
+            <p class="hinweis">AI Kontor bereitet vor – übermitteln und einreichen tun Sie selbst.</p>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/06-uva-de-dunkel.jpg">
+              <img src="bilder/06-uva-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Umsatzsteuervoranmeldung in AI Kontor mit Kennzahlen für FinanzOnline">
+            </picture>
+            <figcaption>Die UVA mit den Kennzahlen, die Sie in FinanzOnline eintragen.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="berichte">
+          <div class="funktion-text">
+            <span class="nr">08</span>
+            <h3>Berichte <span class="und">&amp;</span> Fragen</h3>
+            <ul class="punkte">
+              <li>Einnahmen, Ausgaben und Gewinn je Monat, mit Verlauf und Kategorien</li>
+              <li>Fragen Sie in Ihren eigenen Worten – die KI antwortet aus Ihren Zahlen</li>
+              <li>Schätzung der Einkommensteuer für Einzelunternehmen</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/05-berichte-de-dunkel.jpg">
+              <img src="bilder/05-berichte-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Übersicht in AI Kontor mit Einnahmen, Ausgaben, Gewinn und Fakturiert für den Monat">
+            </picture>
+            <figcaption>Der Monat auf einen Blick, ohne Umsatzsteuer gerechnet.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="privat">
+          <div class="funktion-text">
+            <span class="nr">09</span>
+            <h3>Privat</h3>
+            <ul class="punkte">
+              <li>Private Einnahmen und Ausgaben, getrennt vom Betrieb</li>
+              <li>Budget je Kategorie, mit Hinweis ab 80 %</li>
+              <li>Sparziele mit Ein- und Auszahlungen</li>
+              <li>Nur für den Inhaber sichtbar – auch Belege</li>
+            </ul>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/12-privat-de-dunkel.jpg">
+              <img src="bilder/12-privat-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Private Übersicht in AI Kontor mit Einnahmen, Ausgaben, Gespart und Sparquote">
+            </picture>
+            <figcaption>Was übrig bleibt – und wie viel davon gespart ist.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion" id="team">
+          <div class="funktion-text">
+            <span class="nr">10</span>
+            <h3>Steuerberatung <span class="und">&amp;</span> Team</h3>
+            <ul class="punkte">
+              <li>Rollen für Inhaber, Büro und Steuerberatung, mit fein einstellbaren Rechten</li>
+              <li>Die Steuerberatung sieht, was Sie freigeben, und ändert nichts</li>
+              <li>Excel- und ZIP-Export mit allen Belegen, dazu die Kontensalden für RZL</li>
+              <li>Jede Person meldet sich mit Zwei-Faktor-Authentifizierung an</li>
+            </ul>
+            <p class="hinweis">AI Kontor ersetzt keine Steuerberatung. Prüfen Sie Meldungen an das Finanzamt bitte vor dem Absenden.</p>
+            <a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="bild">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcset="bilder/14-rollen-de-dunkel.jpg">
+              <img src="bilder/14-rollen-de-hell.jpg" width="1800" height="1125" loading="lazy"
+                   alt="Rollen in AI Kontor: Rechte für Inhaber, Büro und Steuerberatung zum Ankreuzen">
+            </picture>
+            <figcaption>Sie bestimmen, was Büro und Steuerberatung sehen und tun dürfen.</figcaption>
+          </figure>
+        </article>
+
+        <article class="funktion ohne-bild" id="daten">
+          <div class="funktion-text">
+            <span class="nr">11</span>
+            <h3>Ihre Daten</h3>
+          </div>
+          <ul class="punkte gross">
+            <li><strong>Auf Ihrem Computer</strong>Alles liegt in einer Datenbank auf Ihrem eigenen Mac oder Windows-PC – ohne Cloud-Konto, ohne Analyse, ohne Werbung.</li>
+            <li><strong>Täglich gesichert</strong>Verschlüsselte Sicherung in einen Ordner Ihrer Wahl, täglich automatisch.</li>
+            <li><strong>Notfallschlüssel</strong>Damit stellen Sie eine Sicherung auch auf einem anderen Computer wieder her.</li>
+            <li><strong>KI, wenn Sie wollen</strong>Mit eigenem Schlüssel beim Anbieter Ihrer Wahl. Belege gehen nur dorthin, und Sie prüfen jeden Vorschlag. Ohne KI funktioniert alles andere genauso.</li>
+            <li class="ohne-punkt"><a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a></li>
+          </ul>
+        </article>
+
+        <article class="funktion ohne-bild" id="plattform">
+          <div class="funktion-text">
+            <span class="nr">12</span>
+            <h3>Mac <span class="und">&amp;</span> Windows</h3>
+            <img class="plattform-icon" src="bilder/icon-256.png" alt="Das App-Symbol von AI Kontor" width="128" height="128" loading="lazy">
+          </div>
+          <ul class="punkte gross">
+            <li><strong>Eine App für beide</strong>AI Kontor läuft auf dem Mac und auf Windows (64 Bit) – mit denselben Funktionen und zum selben Preis.</li>
+            <li><strong>Mac</strong>Demnächst als Abo im Mac App Store.</li>
+            <li><strong>Windows</strong>Schreiben Sie uns eine <a href="mailto:isar.pishan@gmail.com?subject=AI%20Kontor%20f%C3%BCr%20Windows">E-Mail</a> – Sie erhalten alle Unterlagen und den Link zum Download.</li>
+            <li><strong>Drei Sprachen</strong>Oberfläche auf Deutsch, Englisch und Persisch, hell oder dunkel. Rechnungen und E-Mails an Ihre Kunden sind immer auf Deutsch, nach österreichischem Recht.</li>
+            <li class="ohne-punkt"><a class="nach-oben" href="#uebersicht">Zur Übersicht <span aria-hidden="true">↑</span></a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="preis">
+    <div class="rahmen zweispaltig">
+      <div>
+        <p class="label">02 / Preis</p>
+        <h2>Ein Abo.</h2>
+      </div>
+      <div class="preis-block">
+        <p class="preis" aria-label="€ 99,99"><span aria-hidden="true">€ 99<span class="cent">99</span></span></p>
+        <p class="preis-zusatz">pro Monat, inkl. USt.</p>
+        <p>Gleicher Preis für Mac und Windows. Für den Mac als Abo im Mac App Store. Für Windows schreiben Sie uns eine E-Mail – Sie erhalten dann alle Unterlagen und den Link zum Download.</p>
+        <p>Wenn Sie KI nutzen, zahlen Sie den gewählten Anbieter direkt bei diesem.</p>
+        <div class="knopf-zeile">
+          <span class="knopf">Demnächst im Mac App Store</span>
+          <a class="zweitlink" href="mailto:isar.pishan@gmail.com?subject=AI%20Kontor%20f%C3%BCr%20Windows">Für Windows per E-Mail anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="abschnitt" id="fragen">
+    <div class="rahmen zweispaltig">
+      <div>
+        <p class="label">03 / Fragen</p>
+        <h2>Häufige Fragen.</h2>
+      </div>
+      <div>
+        <div class="fragen">
+          <details>
+            <summary>Für wen ist AI Kontor?</summary>
+            <p>Für kleine Betriebe in Österreich: Einzelunternehmen mit Einnahmen-Ausgaben-Rechnung und kleine GmbHs mit doppelter Buchhaltung, mit oder ohne Mitarbeiter. Rechnungen nach österreichischem Umsatzsteuergesetz, Kleinunternehmerregelung und UVA für FinanzOnline sind dabei.</p>
+          </details>
+          <details>
+            <summary>Wo liegen meine Daten?</summary>
+            <p>Ausschließlich auf Ihrem Computer. Wir haben keinen Zugriff darauf. Wählen Sie unter <strong>AI Kontor → Desktop-Einstellungen → Sicherungsordner wählen</strong> einen Ordner, zum Beispiel auf einem externen Laufwerk; AI Kontor sichert dann täglich verschlüsselt.</p>
+          </details>
+          <details>
+            <summary>Läuft AI Kontor auf Mac und Windows?</summary>
+            <p>Ja. AI Kontor gibt es für Mac und für Windows (64 Bit). Für den Mac demnächst im Mac App Store; für Windows schreiben Sie uns eine <a href="mailto:isar.pishan@gmail.com?subject=AI%20Kontor%20f%C3%BCr%20Windows">E-Mail</a>, dann erhalten Sie alle Unterlagen und den Link zum Download. Alle Daten bleiben auf dem Computer, auf dem AI Kontor läuft.</p>
+          </details>
+          <details>
+            <summary>Brauche ich einen KI-Anbieter?</summary>
+            <p>Nein. Mit einem eigenen Schlüssel liest AI Kontor Belege und Kontoauszüge automatisch; ohne Schlüssel erfassen Sie die Angaben selbst. Alles andere funktioniert genauso.</p>
+          </details>
+          <details>
+            <summary>Was ist der Notfallschlüssel?</summary>
+            <p>Ohne ihn lässt sich eine Sicherung auf einem anderen Computer nicht wiederherstellen. Speichern oder drucken Sie ihn einmal und bewahren Sie ihn getrennt von der Sicherung auf.</p>
+          </details>
+          <details>
+            <summary>In welchen Sprachen gibt es AI Kontor?</summary>
+            <p>Die Oberfläche gibt es auf Deutsch, Englisch und Persisch. Rechnungen, Mahnungen und E-Mails an Ihre Kunden sind immer auf Deutsch, nach österreichischem Recht.</p>
+          </details>
+          <details>
+            <summary>Was rechnet die Lohnverrechnung nicht?</summary>
+            <p>AI Kontor rechnet gewöhnliche Dienstverhältnisse von Angestellten und Arbeitern. Seltene Sonderfälle berechnet die App nicht; sie sagt das klar, damit Sie diese Fälle mit Ihrer Steuerberatung oder Lohnverrechnung klären.</p>
+          </details>
+          <details>
+            <summary>Ersetzt AI Kontor die Steuerberatung?</summary>
+            <p>Nein. AI Kontor führt Ihre Bücher, bereitet UVA, Erklärungen und Meldedateien vor und exportiert alles für Ihre Steuerberatung. Prüfen Sie Meldungen bitte vor dem Absenden.</p>
+          </details>
+        </div>
+        <p class="fragen-mehr">Weitere Fragen? <a href="support.html">Zum Support</a></p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer class="fuss">
+  <div class="rahmen">
+    <p>© 2026 AI Kontor · Entwickelt von Isar Pishan</p>
+    <nav aria-label="Rechtliches">
+      <a href="support.html">Support</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>

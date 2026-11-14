@@ -4,19 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Datenschutz – AI Kontor</title>
-<link rel="icon" href="icon.png">
+<link rel="icon" href="bilder/icon-64.png">
+<meta name="color-scheme" content="dark light">
 <link rel="stylesheet" href="stil.css">
 </head>
 <body>
-<main>
-<header><img src="icon.png" alt=""><a href="index.html">AI Kontor</a>
-<nav><a href="index.html">Support</a><a href="datenschutz.html" aria-current="page">Datenschutz</a><a href="impressum.html">Impressum</a></nav></header>
+<header class="kopf">
+  <div class="rahmen">
+    <a class="marke" href="index.html"><img src="bilder/icon-64.png" alt="" width="32" height="32">AI Kontor</a>
+    <nav class="navi" aria-label="Seite">
+      <a href="index.html#funktionen">Funktionen</a>
+      <a href="index.html#preis">Preis</a>
+      <a href="support.html">Support</a>
+      <a href="datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+    <nav class="sprachen" aria-label="Sprache">
+      <a href="datenschutz.html" aria-current="page" lang="de">DE</a>
+      <a href="en/index.html" lang="en" hreflang="en">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main class="text">
 
 <h1>Datenschutzerklärung</h1>
 <p class="stand">Stand: November 2026 · <a href="#english">English version below</a></p>
 
 <h2>Kurz gesagt</h2>
-<p><strong>AI Kontor sammelt keine Daten.</strong> Alle Daten, die Sie in AI Kontor eingeben – Kunden, Rechnungen, Belege, Bankumsätze und private Finanzen – werden ausschließlich auf Ihrem eigenen Mac gespeichert. Wir als Herausgeber erhalten davon nichts: kein Benutzerkonto bei uns, keine Cloud, keine Analyse, keine Werbung, kein Tracking.</p>
+<p><strong>AI Kontor sammelt keine Daten.</strong> Alle Daten, die Sie in AI Kontor eingeben – Kunden, Rechnungen, Belege, Bankumsätze und private Finanzen – werden ausschließlich auf Ihrem eigenen Computer gespeichert. Wir als Herausgeber erhalten davon nichts: kein Benutzerkonto bei uns, keine Cloud, keine Analyse, keine Werbung, kein Tracking.</p>
 
 <h2>Verantwortlicher</h2>
 <p>Verantwortlich für diese Website und für die Bearbeitung von Support-Anfragen:<br>
@@ -26,22 +42,23 @@ Josefsgasse 12/29a<br>
 E-Mail: <a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a></p>
 
 <h2>Daten in der App</h2>
-<p>AI Kontor speichert alle Inhalte in einer Datenbank im geschützten Programmordner Ihres Mac (App Sandbox von Apple). Für diese Daten sind Sie bzw. Ihr Betrieb selbst verantwortlich; wir haben keinen Zugriff darauf und verarbeiten sie nicht in Ihrem Auftrag.</p>
+<p>AI Kontor speichert alle Inhalte in einer Datenbank auf Ihrem Computer: am Mac im geschützten Programmordner der App (App Sandbox von Apple), unter Windows in Ihrem Benutzerordner (<span class="ltr">%APPDATA%\AI Kontor</span>). Für diese Daten sind Sie bzw. Ihr Betrieb selbst verantwortlich; wir haben keinen Zugriff darauf und verarbeiten sie nicht in Ihrem Auftrag.</p>
 <p>Zugangsdaten wie Passwörter für E-Mail-Postfächer oder Schlüssel für KI-Anbieter werden verschlüsselt gespeichert. Sicherungen, die AI Kontor erstellt, sind verschlüsselt und werden nur in einen Ordner geschrieben, den Sie selbst auswählen.</p>
 
 <h2>Verbindungen, die Sie selbst einschalten</h2>
-<p>AI Kontor stellt von sich aus keine Verbindung zu uns oder zu Dritten her. Nur wenn Sie eine der folgenden Funktionen selbst einrichten, werden Daten direkt von Ihrem Mac an den jeweiligen Dienst übertragen:</p>
+<p>AI Kontor stellt von sich aus keine Verbindung zu uns oder zu Dritten her. Nur wenn Sie eine der folgenden Funktionen selbst einrichten, werden Daten direkt von Ihrem Computer an den jeweiligen Dienst übertragen:</p>
 <h3>KI-Funktionen (optional)</h3>
 <p>Wenn Sie in den Einstellungen einen KI-Anbieter (z. B. Anthropic, OpenAI, Google, Mistral oder einen lokalen Dienst) mit Ihrem eigenen Schlüssel einrichten, werden Belege, Texte oder Sprachaufnahmen zur Auswertung direkt an diesen Anbieter gesendet. Dafür gelten Ihr Vertrag und die Datenschutzbestimmungen dieses Anbieters. Ohne KI-Schlüssel funktioniert AI Kontor vollständig, nur ohne automatisches Lesen.</p>
 <h3>E-Mail</h3>
 <p>Für den Versand von Rechnungen und Mahnungen und für das Abholen von Belegen verbindet sich AI Kontor mit dem E-Mail-Server, den Sie angeben.</p>
 <h3>Handy im eigenen WLAN</h3>
-<p>Die Belegseite für Ihr Handy ist nur in Ihrem eigenen Netzwerk erreichbar. Die Daten bleiben auf Ihrem Mac.</p>
+<p>Die Belegseite für Ihr Handy ist nur in Ihrem eigenen Netzwerk erreichbar. Die Daten bleiben auf Ihrem Computer.</p>
 <h3>Mikrofon</h3>
-<p>Das Mikrofon wird nur verwendet, wenn Sie Ausgaben per Sprache erfassen. macOS fragt dafür vorher um Erlaubnis.</p>
+<p>Das Mikrofon wird nur verwendet, wenn Sie Ausgaben per Sprache erfassen. Am Mac fragt macOS dafür vorher um Erlaubnis.</p>
 
-<h2>App Store</h2>
-<p>Kauf, Bezahlung und Download laufen über den App Store von Apple; dafür gilt die <a href="https://www.apple.com/legal/privacy/">Datenschutzrichtlinie von Apple</a>. Von Apple erhalten wir nur zusammengefasste Verkaufszahlen sowie – wenn Sie dem in den Einstellungen Ihres Mac zugestimmt haben – anonyme Absturzberichte. Daraus können wir keine Personen erkennen.</p>
+<h2>Bezug der App</h2>
+<p><strong>Mac:</strong> Kauf, Bezahlung und Download laufen über den App Store von Apple; dafür gilt die <a href="https://www.apple.com/legal/privacy/">Datenschutzrichtlinie von Apple</a>. Von Apple erhalten wir nur zusammengefasste Verkaufszahlen sowie – wenn Sie dem in den Einstellungen Ihres Mac zugestimmt haben – anonyme Absturzberichte. Daraus können wir keine Personen erkennen.</p>
+<p><strong>Windows:</strong> Die Windows-Version erhalten Sie direkt von uns nach einer Anfrage per E-Mail. Die Angaben, die Sie uns dafür geben (z. B. Name, Betrieb, Anschrift, E-Mail-Adresse), verwenden wir nur für Vertrag, Abrechnung und Zusendung der App (Art. 6 Abs. 1 lit. b und c DSGVO) und bewahren sie so lange auf, wie es gesetzliche Aufbewahrungsfristen verlangen. Auf Ihre Daten in der App haben wir auch hier keinen Zugriff.</p>
 
 <h2>Support-Anfragen</h2>
 <p>Wenn Sie uns per E-Mail schreiben, verwenden wir Ihre Angaben nur, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b und f DSGVO). Wir löschen die Korrespondenz, sobald sie nicht mehr benötigt wird, spätestens nach Ablauf gesetzlicher Aufbewahrungsfristen. Bitte senden Sie uns keine Rechnungen, Belege oder andere vertrauliche Daten Ihrer Kunden.</p>
@@ -53,11 +70,21 @@ E-Mail: <a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a></p>
 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Wenden Sie sich dafür an die oben genannte E-Mail-Adresse. Sie können sich außerdem bei der österreichischen Datenschutzbehörde beschweren: Barichgasse 40–42, 1030 Wien, <a href="https://www.dsb.gv.at">www.dsb.gv.at</a>.</p>
 
 <h2 id="english">English summary</h2>
-<p><strong>AI Kontor does not collect any data.</strong> Everything you enter is stored only on your own Mac, inside the app's sandboxed container. We, the publisher, receive nothing: no account with us, no cloud, no analytics, no advertising, no tracking.</p>
-<p>Data leaves your Mac only through features you set up yourself: an AI provider of your choice using your own API key (receipts, text or voice are sent directly to that provider under its terms), your own email server, and the receipt page on your own Wi-Fi. The microphone is used only for voice entry, after macOS asks for permission.</p>
-<p>Purchases are handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; we only receive aggregated sales figures and, if you agreed, anonymous crash reports. Support emails are used only to answer your request. You can contact us at <a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a> and complain to the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at">dsb.gv.at</a>).</p>
+<p><strong>AI Kontor does not collect any data.</strong> Everything you enter is stored only on your own computer – on the Mac inside the app's sandboxed container, on Windows in your user folder. We, the publisher, receive nothing: no account with us, no cloud, no analytics, no advertising, no tracking.</p>
+<p>Data leaves your computer only through features you set up yourself: an AI provider of your choice using your own API key (receipts, text or voice are sent directly to that provider under its terms), your own email server, and the receipt page on your own Wi-Fi. The microphone is used only for voice entry; on the Mac, macOS asks for permission first.</p>
+<p>On the Mac, purchases are handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; we only receive aggregated sales figures and, if you agreed, anonymous crash reports. The Windows version is provided directly by us after an email request; the details you give us for this are used only for the contract, billing and delivery, and kept as long as statutory retention periods require. Support emails are used only to answer your request. You can contact us at <a href="mailto:isar.pishan@gmail.com">isar.pishan@gmail.com</a> and complain to the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at">dsb.gv.at</a>).</p>
 
-<footer>© 2026 Isar Pishan · <a href="impressum.html">Impressum</a></footer>
 </main>
+
+<footer class="fuss">
+  <div class="rahmen">
+    <p>© 2026 AI Kontor · Entwickelt von Isar Pishan</p>
+    <nav aria-label="Rechtliches">
+      <a href="support.html">Support</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
+</footer>
 </body>
 </html>

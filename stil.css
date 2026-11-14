@@ -1,20 +1,304 @@
-:root{color-scheme:light dark;--canvas:#faf9f6;--ink:#20241f;--muted:#5d625a;--line:#dcded7;--akzent:#4f7a65}
-@media (prefers-color-scheme:dark){:root{--canvas:#151a16;--ink:#eef0e9;--muted:#b7beb3;--line:#394139;--akzent:#8fb8a2}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);font:17px/1.7 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
-main{max-width:760px;margin:auto;padding:56px 24px 96px}
-header{display:flex;align-items:center;gap:14px;margin-bottom:40px}
-header img{width:44px;height:44px;border-radius:10px}
-header a{color:inherit;text-decoration:none;font-weight:600;letter-spacing:.02em}
-nav{display:flex;gap:20px;flex-wrap:wrap;margin-inline-start:auto;font-size:15px}
-nav a{color:var(--muted);text-decoration:none}nav a[aria-current]{color:var(--ink)}
-h1{font-size:40px;line-height:1.15;font-weight:400;margin:0 0 12px}
-h2{font-size:22px;font-weight:500;margin:44px 0 8px;padding-top:28px;border-top:1px solid var(--line)}
-h3{font-size:18px;font-weight:500;margin:24px 0 4px}
-p,li{color:var(--muted)}strong{color:var(--ink);font-weight:500}
-a{color:var(--akzent)}
-.stand{font-size:14px;color:var(--muted)}
-.kontakt{font-size:20px}
-footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-footer a{color:var(--muted)}
-@media(max-width:560px){h1{font-size:32px}header{flex-wrap:wrap}nav{margin-inline-start:0;width:100%}}
+/*
+ * AI Kontor – Website. Gestaltung: Carbon / Ivory / Graphite, Roségold nur als Akzent
+ * (Knopf, Aufzählungspunkte). Wie die App: große, leichte Überschriften, Linien statt Karten,
+ * keine Schatten und keine Verläufe. Hell und dunkel folgen dem Gerät.
+ */
+:root {
+  color-scheme: dark;
+  --canvas: #050505;
+  --flaeche: #151515;
+  --ink: #f4f2ef;
+  --muted: #a6a19d;
+  --line: #333333;
+  --rose: #b1847a;
+  --rose-ink: #050505;
+  --schrift: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Farben des App-Symbols: Taupe-Kachel, Elfenbein-K, Roségold-Punkt */
+  --taupe-hell: #c3b9a9;
+  --taupe: #aca191;
+  --taupe-dunkel: #92877a;
+  --kachel-text: #352c22;
+  --taupe-rand: #6f6456;
+  --elfenbein: #f4efe7;
+  --punkt-hell: #ead4b4;
+  --punkt: #c0a383;
+  --punkt-dunkel: #8a6c4f;
+  --kachel-schatten: 0 18px 30px -14px rgb(52 40 28 / 0.55), 0 3px 6px -2px rgb(52 40 28 / 0.3);
+  --kachel-schatten-hoch: 0 28px 40px -16px rgb(52 40 28 / 0.6), 0 6px 10px -4px rgb(52 40 28 / 0.3);
+  --rand: clamp(16px, 5.5vw, 64px);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+    --canvas: #fffdfa;
+    --flaeche: #f4f2ef;
+    --ink: #050505;
+    --muted: rgb(5 5 5 / 0.64);
+    --line: #d8d4ce;
+    --kachel-schatten: 0 18px 30px -14px rgb(90 70 50 / 0.45), 0 3px 6px -2px rgb(90 70 50 / 0.22);
+    --kachel-schatten-hoch: 0 28px 40px -16px rgb(90 70 50 / 0.5), 0 6px 10px -4px rgb(90 70 50 / 0.24);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--canvas); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 400 17px/1.65 var(--schrift);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+[id] { scroll-margin-block-start: 24px; }
+
+.rahmen { max-width: 1240px; margin-inline: auto; padding-inline: var(--rand); }
+
+/* ── Kopf ── */
+.kopf { border-block-end: 1px solid var(--line); }
+.kopf .rahmen { display: flex; align-items: center; gap: 28px; min-height: 76px; }
+.marke { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 500; letter-spacing: 0.02em; white-space: nowrap; }
+.marke img { width: 32px; height: 32px; }
+.navi { display: flex; gap: 24px; margin-inline-start: auto; font-size: 15px; }
+.navi a, .sprachen a { color: var(--muted); text-decoration: none; }
+.navi a:hover, .sprachen a:hover, .navi a[aria-current] { color: var(--ink); }
+.sprachen { display: flex; gap: 10px; padding-inline-start: 24px; border-inline-start: 1px solid var(--line); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; }
+.sprachen [aria-current] { color: var(--ink); }
+
+/* ── Typografie ── */
+.label {
+  margin: 0 0 20px;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted);
+}
+h1, h2, h3 { font-weight: 300; margin: 0; }
+h1 { font-size: clamp(46px, 8vw, 108px); line-height: 1.02; letter-spacing: -0.025em; }
+h2 { font-size: clamp(34px, 4.6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; }
+h3 { font-size: 22px; line-height: 1.3; font-weight: 400; }
+p { margin: 0 0 16px; color: var(--muted); max-width: 62ch; }
+strong { color: var(--ink); font-weight: 500; }
+.einleitung { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.55; max-width: 40ch; margin-block: 28px 36px; }
+
+/* ── Knopf: einziger großer Akzent ── */
+.knopf {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px;
+  border-radius: 999px; background: var(--rose); color: var(--rose-ink);
+  font-size: 16px; font-weight: 500; text-decoration: none; white-space: nowrap;
+}
+a.knopf:hover { filter: brightness(1.06); }
+.knopf-zeile { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
+.knopf-zeile p { margin: 0; font-size: 14px; }
+.zweitlink { color: var(--ink); font-size: 16px; text-decoration: underline; text-decoration-color: var(--line); text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.zweitlink:hover { text-decoration-color: var(--ink); }
+.klein { margin-block-start: 20px; font-size: 14px; }
+.fragen details p a { color: var(--ink); text-decoration-color: var(--rose); text-underline-offset: 3px; }
+.ltr { direction: ltr; unicode-bidi: isolate; }
+
+/* ── Hero ── */
+.hero {
+  padding-block: clamp(40px, 6vw, 72px) clamp(40px, 5vw, 64px);
+  display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(24px, 3vw, 40px); align-items: start;
+}
+.hero > * { grid-column: 2; }
+.hero > .hero-icon { grid-column: 1; grid-row: 1 / span 3; }
+.hero h1 { font-size: clamp(40px, 5.4vw, 76px); }
+.hero .einleitung { margin-block: 16px 28px; }
+.hero .klein { margin-block-start: 16px; }
+
+/* ── Überblick: zwölf Kacheln wie das App-Symbol (Taupe, plastisch, Roségold-Punkt) ──
+ * Bewusste Ausnahme vom flachen DDL-Stil: nur diese Kacheln haben Verlauf und Schatten, damit sie wie das Symbol wirken. */
+.uebersicht { padding-block-end: clamp(56px, 8vw, 104px); scroll-margin-block-start: 24px; }
+.kacheln {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px);
+}
+.kacheln li { display: flex; container-type: inline-size; }
+/* Alle Maße in cqi (Anteil der Kachelbreite): Titel, Text und Pfeil stehen in jeder Kachel an derselben Stelle */
+.kachel {
+  position: relative; flex: 1; min-inline-size: 0; aspect-ratio: 1 / 1;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  padding: 0 10cqi;
+  border-radius: 22%;
+  background:
+    radial-gradient(120% 90% at 30% 0%, rgb(255 255 255 / 0.22), transparent 55%),
+    linear-gradient(172deg, var(--taupe-hell) 0%, var(--taupe) 45%, var(--taupe-dunkel) 100%);
+  box-shadow:
+    inset 0 2px 1px rgb(255 255 255 / 0.5),
+    inset 0 -4px 8px rgb(60 46 32 / 0.22),
+    inset 0 0 0 1px rgb(60 46 32 / 0.12),
+    var(--kachel-schatten);
+  color: var(--elfenbein); text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+/* Titel: erste Zeile überall auf gleicher Höhe; Platz für zwei Zeilen, damit der Text darunter überall gleich beginnt */
+.kachel-titel {
+  display: flex; align-items: flex-start; justify-content: center; text-align: center;
+  margin-block-start: 22cqi; min-block-size: 2.2em;
+  font-size: 7.6cqi; font-weight: 500; line-height: 1.1; letter-spacing: -0.005em;
+  text-transform: uppercase; hyphens: manual;
+  color: var(--elfenbein);
+  /* plastisch wie das K: Licht von oben, Schatten nach unten */
+  text-shadow: 0 -1px 0 rgb(255 255 255 / 0.55), 0 1px 0 rgb(120 104 86 / 0.9), 0 3px 3px rgb(52 40 28 / 0.5), 0 6px 12px rgb(52 40 28 / 0.3);
+}
+/* Roségold-Punkt: oben links am Titel (Wunsch des Nutzers) */
+.titel-wort { position: relative; display: inline-block; white-space: nowrap; }
+.titel-wort::after {
+  content: ""; position: absolute; inset-block-start: -0.28em; inset-inline-start: -0.72em;
+  width: 0.5em; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--punkt-hell) 0%, var(--punkt) 40%, var(--punkt-dunkel) 100%);
+  box-shadow: 0 2px 3px rgb(50 36 22 / 0.45), inset 0 -1px 1px rgb(50 36 22 / 0.3);
+}
+/* Das & in Titeln kleiner, damit die Wörter tragen */
+.und { font-size: 0.68em; vertical-align: 0.12em; }
+/* Beschreibung: dunkel eingeprägt, deutlich anders als der helle Titel */
+.kachel-text {
+  margin-block-start: 8cqi; text-align: center;
+  font-size: max(13px, 5.4cqi); font-weight: 400; line-height: 1.42; color: var(--kachel-text);
+  text-shadow: 0 1px 0 rgb(255 255 255 / 0.28);
+}
+.kachel-pfeil {
+  position: absolute; inset-block-end: 9cqi; inset-inline: 0; text-align: center;
+  font-size: 6cqi; line-height: 1; color: var(--kachel-text); text-shadow: 0 1px 0 rgb(255 255 255 / 0.28);
+  transition: transform 0.25s ease;
+}
+.kachel:hover, .kachel:focus-visible { transform: translateY(-5px); box-shadow: inset 0 2px 1px rgb(255 255 255 / 0.55), inset 0 -4px 8px rgb(60 46 32 / 0.28), inset 0 0 0 1px rgb(60 46 32 / 0.12), var(--kachel-schatten-hoch); }
+.kachel:hover .kachel-pfeil { transform: translateY(3px); }
+.kachel:active { transform: translateY(1px); box-shadow: inset 0 2px 1px rgb(255 255 255 / 0.4), inset 0 -2px 5px rgb(60 46 32 / 0.3), inset 0 0 0 1px rgb(60 46 32 / 0.14), 0 4px 8px -4px rgb(52 40 28 / 0.4); }
+.kachel:focus-visible { outline: 2px solid var(--rose); outline-offset: 4px; }
+
+/* Angesprungenen Abschnitt kurz mit Roségold-Linie zeigen */
+@keyframes markieren { from { border-block-start-color: var(--rose); } to { border-block-start-color: var(--line); } }
+.funktion:target { animation: markieren 2.4s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .funktion:target { animation: none; border-block-start-color: var(--rose); }
+  .kachel, .kachel-pfeil { transition: none; }
+  .kachel:hover, .kachel:focus-visible { transform: none; }
+}
+
+/* ── Hero ── */
+.hero-icon { width: clamp(64px, 7vw, 96px); height: auto; margin-block-start: -4px; filter: drop-shadow(0 10px 16px rgb(52 40 28 / 0.35)); }
+.plattform {
+  display: inline-flex; align-items: center; gap: 12px; margin: 20px 0 0;
+  font-size: clamp(19px, 1.9vw, 24px); color: var(--ink); max-width: none;
+}
+.plattform::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--rose); }
+
+/* ── Bildschirmfotos ── */
+.bild { margin: 0; }
+.bild img { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--flaeche); }
+.bild figcaption { margin-block-start: 14px; font-size: 14px; color: var(--muted); }
+
+/* ── Abschnitte: Linie und Raum statt Kästen ── */
+.abschnitt { border-block-start: 1px solid var(--line); padding-block: clamp(64px, 9vw, 120px); }
+.zweispaltig { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px clamp(32px, 6vw, 96px); align-items: start; }
+.zweispaltig > :first-child { position: sticky; inset-block-start: 32px; }
+.zweispaltig .hinweis { margin-block-start: 28px; font-size: 15px; }
+
+/* Funktionen: Text links, Bild rechts; jede mit eigener Linie */
+.funktionen { margin-block-start: clamp(48px, 6vw, 72px); }
+.funktion {
+  display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 32px clamp(32px, 5vw, 72px); align-items: start;
+  padding-block: clamp(40px, 5vw, 64px); border-block-start: 1px solid var(--line);
+  scroll-margin-block-start: 8px;
+}
+.funktionen > .funktion:last-child { border-block-end: 1px solid var(--line); }
+.funktion .nr { display: block; margin-block-end: 10px; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--muted); }
+.funktion h3 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 300; letter-spacing: -0.01em; margin-block-end: 22px; }
+.funktion .hinweis { margin: 18px 0 0; font-size: 14px; }
+.nach-oben { display: inline-block; margin-block-start: 26px; font-size: 14px; color: var(--muted); text-decoration: none; }
+.nach-oben:hover { color: var(--ink); }
+.nach-oben span { color: var(--rose); }
+.ohne-punkt::before { display: none; }
+.punkte.gross li.ohne-punkt { padding-inline-start: 0; border-block-end: 0; }
+.plattform-icon { width: 128px; height: auto; margin-block-start: 8px; filter: drop-shadow(0 12px 18px rgb(52 40 28 / 0.35)); }
+
+/* Rechner und Handy nebeneinander */
+.bild.paar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.3fr); gap: 16px; align-items: end; }
+.bild.paar figcaption { grid-column: 1 / -1; }
+.bild .handy img { border-radius: 18px; }
+
+/* Aufzählung mit Roségold-Punkten */
+.punkte { list-style: none; margin: 0; padding: 0; }
+.punkte li { position: relative; padding-inline-start: 22px; margin-block-end: 10px; color: var(--muted); }
+.punkte li:last-child { margin-block-end: 0; }
+.punkte li strong { display: block; margin-block-end: 2px; }
+.punkte li::before {
+  content: ""; position: absolute; inset-inline-start: 2px; inset-block-start: 0.7em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--rose);
+}
+.punkte.gross li { padding-block: 18px; margin: 0; border-block-end: 1px solid var(--line); }
+.punkte.gross li:first-child { border-block-start: 1px solid var(--line); }
+.punkte.gross li::before { inset-block-start: calc(18px + 0.7em); }
+
+/* Preis */
+.preis { font-size: clamp(64px, 10vw, 128px); font-weight: 300; line-height: 1; letter-spacing: -0.03em; margin: 0 0 16px; color: var(--ink); white-space: nowrap; max-width: none; }
+/* Cent klein und hochgestellt, wie auf Preisschildern in Österreich üblich */
+.preis .cent { font-size: 0.42em; vertical-align: 0.95em; margin-inline-start: 0.06em; letter-spacing: 0; }
+.preis-zusatz { font-size: 19px; color: var(--ink); margin-block-end: 8px; }
+.preis-block .knopf-zeile { margin-block-start: 32px; }
+
+/* Häufige Fragen */
+.fragen { border-block-start: 1px solid var(--line); }
+.fragen details { border-block-end: 1px solid var(--line); }
+.fragen summary {
+  display: flex; justify-content: space-between; gap: 24px; align-items: baseline;
+  padding-block: 22px; cursor: pointer; list-style: none; font-size: 19px;
+}
+.fragen summary::-webkit-details-marker { display: none; }
+.fragen summary::after { content: "+"; font-weight: 300; font-size: 24px; line-height: 1; color: var(--muted); }
+.fragen details[open] summary::after { content: "–"; }
+.fragen details p { padding-block-end: 8px; }
+.fragen-mehr { margin-block-start: 28px; }
+.fragen-mehr a, .zweispaltig p a { text-decoration-color: var(--rose); text-underline-offset: 3px; color: var(--ink); }
+
+/* ── Fuß ── */
+.fuss { border-block-start: 1px solid var(--line); padding-block: 40px 56px; font-size: 14px; color: var(--muted); }
+.fuss .rahmen { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+.fuss nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.fuss a { color: var(--muted); text-decoration: none; }
+.fuss a:hover { color: var(--ink); }
+.fuss p { margin: 0; font-size: 14px; }
+
+/* ── Textseiten (Support, Datenschutz, Impressum) ── */
+.text { max-width: 760px; margin-inline: auto; padding: clamp(56px, 8vw, 96px) var(--rand) 96px; }
+.text h1 { font-size: clamp(40px, 6vw, 64px); margin-block-end: 20px; }
+.text h2 { font-size: 24px; font-weight: 400; letter-spacing: 0; margin: 48px 0 10px; padding-block-start: 32px; border-block-start: 1px solid var(--line); }
+.text h3 { font-size: 18px; font-weight: 500; margin: 28px 0 6px; }
+.text a { color: var(--ink); text-decoration-color: var(--rose); text-underline-offset: 3px; }
+.text ul { color: var(--muted); padding-inline-start: 22px; }
+.text li { color: var(--muted); }
+.stand { font-size: 14px; }
+.kontakt { font-size: 20px; }
+
+/* ── Schmal ── */
+@media (max-width: 1080px) {
+  .kacheln { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .navi { display: none; }
+  .sprachen { margin-inline-start: auto; }
+  .zweispaltig { grid-template-columns: minmax(0, 1fr); }
+  .zweispaltig > :first-child { position: static; }
+  .funktion { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .kacheln { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero > *, .hero > .hero-icon { grid-column: 1; grid-row: auto; }
+  .hero-icon { margin-block-end: 20px; }
+}
+@media (max-width: 480px) {
+  .kopf .rahmen { min-height: 64px; gap: 16px; }
+  .sprachen { padding-inline-start: 16px; }
+  .knopf { width: 100%; justify-content: center; }
+  .kachel { border-radius: 20%; }
+  .kachel { padding-inline: 8cqi; }
+  .kachel-titel { margin-block-start: 34cqi; font-size: 7.6cqi; }
+  .kachel-text { display: none; }
+  .bild.paar { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+}
