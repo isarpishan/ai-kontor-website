@@ -99,14 +99,40 @@ a.knopf:hover { filter: brightness(1.06); }
 
 /* ── Hero ── */
 .hero {
-  padding-block: clamp(40px, 6vw, 72px) clamp(40px, 5vw, 64px);
-  display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(24px, 3vw, 40px); align-items: start;
+  position: relative; isolation: isolate;
+  padding-block: clamp(48px, 7vw, 96px) clamp(48px, 6vw, 80px);
+  min-block-size: clamp(520px, 46vw, 700px);
+  display: grid; grid-template-columns: minmax(0, 0.58fr); align-content: center;
 }
-.hero > * { grid-column: 2; }
-.hero > .hero-icon { grid-column: 1; grid-row: 1 / span 3; }
-.hero h1 { font-size: clamp(40px, 5.4vw, 76px); }
+.hero-inhalt { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(20px, 2.6vw, 36px); align-items: start; }
+.hero-inhalt > * { grid-column: 2; }
+.hero-inhalt > .hero-icon { grid-column: 1; grid-row: 1 / span 3; }
+.hero h1 { font-size: clamp(38px, 4.4vw, 64px); }
 .hero .einleitung { margin-block: 16px 28px; }
 .hero .klein { margin-block-start: 16px; }
+/* Fotos: Hero rechts, Bänder zwischen den Abschnitten */
+/* Hero-Foto: reicht bis zum rechten Fensterrand und läuft nach links und unten weich in den Hintergrund aus */
+.hero-inhalt { position: relative; z-index: 1; }
+.hero-foto {
+  position: absolute; z-index: 0; margin: 0;
+  inset-block: 0; inset-inline-end: calc(50% - 50vw);
+  inline-size: min(64vw, 1000px);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.35) 22%, #000 55%), linear-gradient(to bottom, #000 84%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.35) 22%, #000 55%), linear-gradient(to bottom, #000 84%, transparent 100%);
+  mask-composite: intersect;
+}
+.hero-foto img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 55% 64%; }
+.band { margin: 0; padding-block: clamp(28px, 3.5vw, 44px) 0; }
+/* schmales Panorama: Stimmung zwischen den Abschnitten, ohne den Text zu verdrängen */
+.band img { width: 100%; height: clamp(170px, 19.5vw, 280px); object-fit: cover; object-position: var(--fokus, 50% 50%); border-radius: 18px; }
+/* alle Ränder leicht weich: oben/unten etwas, links/rechts nur wenig */
+.band img {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%), linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%), linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  mask-composite: intersect;
+}
 
 /* ── Überblick: zwölf Kacheln wie das App-Symbol (Taupe, plastisch, Roségold-Punkt) ──
  * Bewusste Ausnahme vom flachen DDL-Stil: nur diese Kacheln haben Verlauf und Schatten, damit sie wie das Symbol wirken. */
@@ -287,9 +313,20 @@ a.knopf:hover { filter: brightness(1.06); }
 @media (max-width: 720px) {
   .kacheln { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (max-width: 900px) {
+  /* Handy/Tablet: Foto oben über die ganze Breite, läuft nach unten in den Text aus */
+  .hero { grid-template-columns: minmax(0, 1fr); min-block-size: 0; padding-block-start: 0; }
+  .hero-foto {
+    position: relative; order: -1; inset: auto; inline-size: auto;
+    margin-inline: calc(-1 * var(--rand)); margin-block-end: -64px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+  .hero-foto img { aspect-ratio: 4 / 3; block-size: auto; object-position: 55% 25%; }
+}
 @media (max-width: 640px) {
-  .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero > *, .hero > .hero-icon { grid-column: 1; grid-row: auto; }
+  .hero-inhalt { grid-template-columns: minmax(0, 1fr); }
+  .hero-inhalt > *, .hero-inhalt > .hero-icon { grid-column: 1; grid-row: auto; }
   .hero-icon { margin-block-end: 20px; }
 }
 @media (max-width: 480px) {
@@ -302,3 +339,7 @@ a.knopf:hover { filter: brightness(1.06); }
   .kachel-text { display: none; }
   .bild.paar { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
 }
+
+main { overflow-x: clip; }
+/* nach einem Foto keine Trennlinie, damit das Bild frei ausläuft */
+.band + .funktion { border-block-start-color: transparent; padding-block-start: clamp(20px, 2.5vw, 32px); }
