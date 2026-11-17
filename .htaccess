@@ -1,0 +1,7 @@
+# Immer https und ohne www (Hoststar: nginx vor Apache; X-Forwarded-Proto verhindert eine Umleitungsschleife)
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://ai-kontor.at%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://ai-kontor.at%{REQUEST_URI} [L,R=301]
