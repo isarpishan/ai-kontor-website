@@ -103,7 +103,7 @@ a.knopf-rand:hover { background: color-mix(in srgb, var(--rose) 14%, transparent
 .zweitlink:hover { text-decoration-color: var(--ink); }
 .klein { margin-block-start: 20px; font-size: 14px; }
 .fragen details p a { color: var(--ink); text-decoration-color: var(--rose); text-underline-offset: 3px; }
-.ltr { direction: ltr; unicode-bidi: isolate; }
+.ltr { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
 
 /* ── Hero ── */
 .hero {
